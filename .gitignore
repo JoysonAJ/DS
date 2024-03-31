@@ -1,0 +1,5 @@
+# Ignore the default a.out file
+a.out
+
+# Ignore all files with .exe extensions (for general executables)
+**/*.out
