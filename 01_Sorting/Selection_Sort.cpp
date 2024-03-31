@@ -20,7 +20,15 @@ int main()
                 minValueIndex = j;
             }
         }
+        // inbuild method
         swap(arr[i], arr[minValueIndex]);
+    
+        // incase no inbuild method
+        /*
+            int temp = arr[i];
+            arr[i] =arr[minValueIndex];
+            arr[minValueIndex] = temp;
+        */
     }
 
     for (int i = 0; i < arrLength; i++)
