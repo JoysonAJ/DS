@@ -25,8 +25,7 @@ int main(){
     int n, key = 0;
     cout << "Enter the Array size \t : \t";
     cin >> n;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++){
         cin >> arr[i];
     }
     cout << "\n enter searching element \t : \t";
