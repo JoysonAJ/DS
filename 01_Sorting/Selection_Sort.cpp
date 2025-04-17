@@ -1,6 +1,29 @@
 #include <iostream>
 using namespace std;
 
+void selectionSort(int arr[], int arrSize)
+{
+    int minIndex = 0;
+    for (int i = 0; i < arrSize - 1; i++)
+    {
+        minIndex = i;
+        for (int j = i + 1; j < arrSize; j++)
+        {
+            if (arr[minIndex] > arr[j])
+            {
+                minIndex = j;
+            }
+        }
+        if (arr[minIndex] != arr[i])
+        {
+            arr[minIndex] = arr[minIndex] + arr[i];
+            arr[i] = arr[minIndex] - arr[i];
+            arr[minIndex] = arr[minIndex] - arr[i];
+            cout << arr[minIndex] << "Swappped with" << arr[i] << "\n";
+        }
+    }
+}
+
 int main()
 {
     int arr[1000], arrLength;
@@ -10,26 +33,7 @@ int main()
         cin >> arr[i];
     }
 
-    for (int i = 0; i < arrLength - 1; i++)
-    {
-        int minValueIndex = i;
-        for (int j = i + 1; j < arrLength; j++)
-        {
-            if (arr[i] > arr[j])
-            {
-                minValueIndex = j;
-            }
-        }
-        // inbuild method
-        swap(arr[i], arr[minValueIndex]);
-    
-        // incase no inbuild method
-        /*
-            int temp = arr[i];
-            arr[i] =arr[minValueIndex];
-            arr[minValueIndex] = temp;
-        */
-    }
+    selectionSort(arr, arrLength);
 
     for (int i = 0; i < arrLength; i++)
     {

@@ -1,6 +1,21 @@
 #include <iostream>
 using namespace std;
 
+void insertion_sort(int arr[], int size)
+{
+    for (int i = 1; i < size; i++)
+    {
+        for (int j = i; j > 0; j--)
+        {
+            if (arr[j] < arr[j - 1])
+                swap(arr[j], arr[j - 1]);
+            else
+                break;
+        }
+    }
+    return;
+}
+
 int main()
 {
     int arr[1000], inputSize;
@@ -11,16 +26,7 @@ int main()
         cin >> arr[i];
     }
 
-    for (int i = 1; i < inputSize; i++)
-    {
-        for (int j = i; j >0; j--)
-        {
-            if (arr[j] < arr[j -1 ])
-                swap(arr[j], arr[j -1 ]);
-            else
-                break;
-        }
-    }
+    insertion_sort(arr,inputSize);
 
     for (int i = 0; i < inputSize; i++)
     {
